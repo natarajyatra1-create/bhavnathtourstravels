@@ -37,9 +37,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Leaflet (free map library, OpenStreetMap data) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -334,7 +331,6 @@
                                     <i data-lucide="message-circle" class="w-4 h-4"></i><span>WhatsApp</span>
                                 </a>
                             </div>
-                            <a href="#map" class="block text-center text-xs font-semibold text-brand-navy hover:text-brand-orange transition">📍 See your pickup &amp; drop route on map ↓</a>
                         </form>
                     </div>
 
@@ -351,25 +347,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Location Map (free: OpenStreetMap + Leaflet) -->
-    <section id="map" class="py-14 sm:py-16 bg-white border-b border-slate-200/70">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm uppercase tracking-widest">Find Any Location</span>
-                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-navy mt-2">Search Any Place on Map</h2>
-                <p class="text-slate-600 mt-3 text-sm sm:text-base">Type any city, village, street or landmark. Your Pickup and Drop from the booking form also appear here with road distance.</p>
-            </div>
-            <div class="max-w-3xl mx-auto mb-4">
-                <div class="relative">
-                    <i data-lucide="search" class="w-4 h-4 text-brand-orange absolute left-3.5 top-3.5"></i>
-                    <input type="text" id="mapSearch" placeholder="Search any location, e.g. Girnar Taleti, Somnath Temple, Dwarka" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange focus:bg-white transition">
-                </div>
-            </div>
-            <div id="routeInfo" class="max-w-3xl mx-auto mb-4 text-sm text-center text-slate-600">Search a place above, or choose Pickup and Drop in the booking form.</div>
-            <div id="routeMap" class="w-full h-[360px] sm:h-[460px] rounded-2xl border border-slate-200 shadow-md overflow-hidden" style="isolation:isolate"></div>
         </div>
     </section>
 
@@ -1075,8 +1052,9 @@
 
             <!-- Interactive Booking & WhatsApp Message Generator -->
             <div class="lg:col-span-7 bg-white rounded-2xl shadow-lg border border-slate-100 p-6 sm:p-8">
-                <h3 class="font-display font-bold text-2xl text-brand-navy">Custom Trip & WhatsApp Inquiry Generator</h3>
-                <p class="text-sm text-slate-500 mt-1 mb-6">Fill in your trip details below to generate a ready-to-send booking inquiry.</p>
+                <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Get a Free Quote</span>
+                <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-brand-navy mt-1">Plan Your Trip With Us</h3>
+                <p class="text-sm text-slate-500 mt-1.5 mb-7">Share your trip details and our team will get back to you quickly with the best fare and vehicle options.</p>
 
                 <form id="contactInquiryForm" class="space-y-6">
                     <div class="grid sm:grid-cols-2 gap-x-6 gap-y-6">
@@ -1176,20 +1154,21 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-medium text-slate-500">Pickup City & Special Notes</label>
-                        <textarea id="custNotes" rows="2" placeholder="e.g. Pickup from Junagadh Railway Station at 7:00 AM..." class="w-full bg-transparent border-0 border-b border-slate-200 focus:border-brand-orange focus:ring-0 focus:outline-none px-0 py-2 text-base font-bold text-slate-900 placeholder:font-normal placeholder:text-slate-400 transition"></textarea>
+                        <label class="block text-xs font-medium text-slate-500">Pickup Location & Special Requests</label>
+                        <textarea id="custNotes" rows="2" placeholder="e.g. Pickup from Junagadh Railway Station at 7:00 AM" class="w-full bg-transparent border-0 border-b border-slate-200 focus:border-brand-orange focus:ring-0 focus:outline-none px-0 py-2 text-base font-bold text-slate-900 placeholder:font-normal placeholder:text-slate-400 transition"></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                        <button type="submit" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold tracking-wide uppercase py-3.5 px-6 rounded-full shadow-lg shadow-emerald-600/25 transition flex items-center justify-center gap-2 text-sm">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            <span>Generate & Send via WhatsApp</span>
+                        <button type="submit" class="flex-1 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-3.5 px-6 rounded-full shadow-md transition flex items-center justify-center gap-2 text-base">
+                            <span>Send Enquiry</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </button>
-                        <button type="button" onclick="copyBookingText()" class="border-2 border-slate-200 hover:border-brand-navy text-brand-navy font-bold py-3 px-6 rounded-full transition flex items-center justify-center gap-2 text-sm">
-                            <i data-lucide="copy" class="w-4 h-4"></i>
-                            <span>Copy Inquiry</span>
-                        </button>
+                        <a href="tel:+919023556476" class="border-2 border-slate-200 hover:border-brand-navy text-brand-navy font-bold py-3 px-6 rounded-full transition flex items-center justify-center gap-2 text-sm">
+                            <i data-lucide="phone-call" class="w-4 h-4"></i>
+                            <span>Call Us</span>
+                        </a>
                     </div>
+                    <p class="text-xs text-slate-400 text-center sm:text-left">Your enquiry opens in WhatsApp so you can review and send it. We will reply as soon as possible.</p>
                 </form>
 
                 <!-- Live Message Preview Box -->
@@ -1555,156 +1534,8 @@
             });
         }
 
-        ['heroPickup', 'heroDrop', 'modalPickup', 'mapSearch'].forEach(id => attachPlaceSuggest(document.getElementById(id)));
+        ['heroPickup', 'heroDrop', 'modalPickup'].forEach(id => attachPlaceSuggest(document.getElementById(id)));
 
-
-        // ===== Free map: OpenStreetMap tiles (Leaflet) + Photon search + OSRM road distance =====
-        (function () {
-            const el = document.getElementById('routeMap');
-            if (!el || typeof L === 'undefined') return;   // offline / blocked: rest of site still works
-            const map = L.map(el, { scrollWheelZoom: false }).setView([22.3, 71.2], 7);
-            // OpenStreetMap's own server blocks pages opened as a local file (no website address is sent),
-            // so for local preview we use a different free tile server. On the real domain OSM tiles are used.
-            const onWeb = location.protocol === 'http:' || location.protocol === 'https:';
-            if (onWeb) {
-                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-            } else {
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    subdomains: 'abcd', maxZoom: 19, attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
-                }).addTo(map);
-            }
-            const info = document.getElementById('routeInfo');
-            const DEFAULT_INFO = info.textContent;
-            const geoCache = new Map(), markers = {}, pts = {}, last = {};
-            // Built-in coordinates for our own place list: these work instantly, even if the search services are busy.
-            const LOCAL = {
-                'junagadh':[21.5222,70.4579],'bhavnath taleti':[21.519,70.503],'bhavnath mahadev temple':[21.519,70.503],'bhavnath':[21.519,70.503],
-                'girnar ropeway':[21.523,70.501],'girnar taleti':[21.5226,70.5017],'girnar':[21.5226,70.5017],'uparkot fort':[21.529,70.468],
-                'junagadh railway station':[21.5137,70.46],'junagadh bus stand':[21.5185,70.464],'sakkarbaug zoo':[21.488,70.475],'damodar kund':[21.527,70.489],
-                'somnath':[20.888,70.4013],'somnath temple':[20.888,70.4013],'veraval':[20.9159,70.3629],
-                'dwarka':[22.2394,68.9678],'dwarkadhish temple':[22.2377,68.9677],'bet dwarka':[22.473,69.109],'nageshwar jyotirlinga':[22.3418,69.0825],'okha':[22.467,69.071],
-                'rajkot':[22.3039,70.8022],'rajkot airport (hirasar)':[22.374,71.033],'rajkot railway station':[22.3081,70.7823],'rajkot bus stand':[22.3008,70.7943],
-                'sasan gir':[21.1688,70.5936],'sasan gir national park':[21.1688,70.5936],'devalia safari park':[21.1553,70.6006],'talala':[21.0527,70.4994],
-                'diu':[20.7144,70.9874],'una':[20.8236,71.0388],'keshod airport':[21.317,70.27],'keshod':[21.3,70.25],
-                'porbandar':[21.6417,69.6293],'kirti mandir':[21.6384,69.6055],'jamnagar':[22.4707,70.0577],'bhavnagar':[21.7645,72.1519],'amreli':[21.6032,71.221],
-                'morbi':[22.8173,70.8372],'surendranagar':[22.7277,71.6486],'palitana':[21.525,71.8236],'bhuj':[23.242,69.6669],'gandhidham':[23.0753,70.1337],
-                'ahmedabad':[23.0225,72.5714],'ahmedabad airport':[23.0772,72.6347],'gandhinagar':[23.2156,72.6369],'vadodara':[22.3072,73.1812],'surat':[21.1702,72.8311],'anand':[22.5645,72.9289],
-                'modasa':[23.4616,73.2979],'palanpur':[24.1724,72.4381],'bharuch':[21.7051,72.9959],'ankleshwar':[21.6264,73.0152],'botad':[22.1699,71.6661],
-                'chhota udaipur':[22.3046,74.0135],'dahod':[22.835,74.255],'ahwa':[20.756,73.687],'saputara':[20.575,73.75],'khambhalia':[22.212,69.659],
-                'nadiad':[22.6916,72.8634],'lunawada':[23.129,73.61],'mehsana':[23.588,72.3693],'rajpipla':[21.873,73.499],'statue of unity (kevadia)':[21.838,73.719],
-                'navsari':[20.9467,72.952],'godhra':[22.7757,73.6143],'pavagadh / champaner':[22.46,73.53],'patan':[23.8493,72.1266],'modhera sun temple':[23.5835,72.133],
-                'himatnagar':[23.599,72.966],'vyara':[21.11,73.39],'valsad':[20.5992,72.9342],'vapi':[20.3893,72.9106],'tharad':[24.3969,71.629],'ambaji':[24.33,72.85],
-                'mandvi':[22.833,69.352],'dholavira':[23.887,70.215],'mumbai':[19.076,72.8777],'pune':[18.5204,73.8567],'udaipur':[24.5854,73.7125],'jaipur':[26.9124,75.7873],'mount abu':[24.5926,72.7156]
-            };
-            function findLocal(q) {
-                const parts = q.toLowerCase().split(',').map(x => x.trim()).filter(Boolean);
-                for (const part of parts) if (LOCAL[part]) return { lat: LOCAL[part][0], lon: LOCAL[part][1] };
-                return null;
-            }
-
-            let line = null, routeToken = 0;
-
-            const pin = c => L.divIcon({
-                className: '', iconSize: [22, 22], iconAnchor: [11, 22],
-                html: '<div style="background:' + c + ';width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.45)"></div>'
-            });
-            const ICONS = { pickup: pin('#16a34a'), drop: pin('#dc2626'), search: pin('#FF7A00') };
-            const LABEL = { pickup: 'Pickup', drop: 'Drop', search: 'Searched place' };
-
-            function photon(q) {
-                const url = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&limit=5&lang=en&lat=21.52&lon=70.46';
-                return fetch(url).then(r => r.ok ? r.json() : Promise.reject())
-                    .then(d => {
-                        const f = (d.features || []).find(x => (x.properties || {}).countrycode === 'IN');
-                        return f ? { lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0] } : null;
-                    }).catch(() => null);
-            }
-            function nominatim(q) {
-                const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=in&q=' + encodeURIComponent(q);
-                return fetch(url).then(r => r.ok ? r.json() : Promise.reject())
-                    .then(d => d && d[0] ? { lat: parseFloat(d[0].lat), lon: parseFloat(d[0].lon) } : null).catch(() => null);
-            }
-            // order: our own list (instant) -> Photon -> Nominatim -> nearest known city from the typed text
-            function geocode(q) {
-                const key = q.toLowerCase();
-                if (geoCache.has(key)) return Promise.resolve(geoCache.get(key));
-                const exact = LOCAL[key] ? { lat: LOCAL[key][0], lon: LOCAL[key][1] } : null;
-                const done = res => { if (res) geoCache.set(key, res); return res; };
-                if (exact) return Promise.resolve(done(exact));
-                return photon(q).then(r => r || nominatim(q)).then(r => done(r || findLocal(q)));
-            }
-            function km(a, b) {   // straight-line distance, used only if the road service is unreachable
-                const R = 6371, rad = x => x * Math.PI / 180;
-                const dLat = rad(b.lat - a.lat), dLon = rad(b.lon - a.lon);
-                const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
-                return 2 * R * Math.asin(Math.sqrt(h));
-            }
-            function fmtTime(sec) {
-                const m = Math.round(sec / 60), h = Math.floor(m / 60);
-                return h ? h + ' hr ' + (m % 60) + ' min' : m + ' min';
-            }
-            function clearRoute() { if (line) { map.removeLayer(line); line = null; } }
-
-            function updateRoute() {
-                clearRoute();
-                const a = pts.pickup, b = pts.drop, token = ++routeToken;
-                if (!(a && b)) { if (!pts.search) info.textContent = DEFAULT_INFO; return; }
-                const bounds = L.latLngBounds([[a.lat, a.lon], [b.lat, b.lon]]);
-                map.fitBounds(bounds, { padding: [50, 50] });
-                info.textContent = 'Finding route...';
-                fetch('https://router.project-osrm.org/route/v1/driving/' + a.lon + ',' + a.lat + ';' + b.lon + ',' + b.lat + '?overview=full&geometries=geojson')
-                    .then(r => r.ok ? r.json() : Promise.reject())
-                    .then(d => {
-                        if (token !== routeToken) return;
-                        const r = d.routes && d.routes[0];
-                        if (!r) throw 0;
-                        line = L.geoJSON(r.geometry, { style: { color: '#FF7A00', weight: 5, opacity: 0.85 } }).addTo(map);
-                        map.fitBounds(line.getBounds(), { padding: [50, 50] });
-                        info.innerHTML = '<strong>' + last.pickup + '</strong> &rarr; <strong>' + last.drop + '</strong>: about <strong>' +
-                            Math.round(r.distance / 1000) + ' km</strong>, ' + fmtTime(r.duration) + ' by road (approx.)';
-                    })
-                    .catch(() => {
-                        if (token !== routeToken) return;
-                        line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], { color: '#FF7A00', weight: 4, dashArray: '8 8' }).addTo(map);
-                        info.innerHTML = '<strong>' + last.pickup + '</strong> &rarr; <strong>' + last.drop + '</strong>: about <strong>' +
-                            Math.round(km(a, b) * 1.25) + ' km</strong> by road (approx.)';
-                    });
-            }
-
-            function setPoint(kind, name) {
-                name = (name || '').trim();
-                if (name === last[kind]) return;
-                last[kind] = name;
-                if (markers[kind]) { map.removeLayer(markers[kind]); markers[kind] = null; }
-                delete pts[kind];
-                if (!name) { if (kind !== 'search') updateRoute(); return; }
-                geocode(name).then(pos => {
-                    if (last[kind] !== name) return;   // user typed something newer meanwhile
-                    if (!pos) { if (kind === 'search') info.textContent = 'Location not found. Try a nearby city or a landmark name.'; return; }
-                    pts[kind] = pos;
-                    markers[kind] = L.marker([pos.lat, pos.lon], { icon: ICONS[kind] }).addTo(map)
-                        .bindPopup('<strong>' + LABEL[kind] + '</strong><br>' + name.replace(/</g, '&lt;'));
-                    if (kind === 'search') {
-                        map.flyTo([pos.lat, pos.lon], 14);
-                        markers[kind].openPopup();
-                        info.textContent = name;
-                    } else {
-                        updateRoute();
-                    }
-                });
-            }
-
-            [['heroPickup', 'pickup'], ['heroDrop', 'drop'], ['mapSearch', 'search']].forEach(([id, kind]) => {
-                const inp = document.getElementById(id);
-                if (!inp) return;
-                inp.addEventListener('place-chosen', () => setPoint(kind, inp.value));
-                inp.addEventListener('change', () => setPoint(kind, inp.value));
-                inp.addEventListener('keydown', e => { if (e.key === 'Enter' && kind === 'search') { e.preventDefault(); setPoint(kind, inp.value); } });
-            });
-            setTimeout(() => map.invalidateSize(), 300);
-        })();
 
         // Mobile Navigation Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1813,23 +1644,19 @@
             const notes = document.getElementById('custNotes').value.trim() || 'None';
 
             return `Namaste Bhavnath Tours & Travels! 🙏\n` +
-                   `*Custom Trip Inquiry Details:*\n` +
+                   `*Trip Enquiry:*\n` +
                    `• *Name:* ${name}\n` +
                    `• *Phone:* ${phone}\n` +
                    `• *Tour/Service:* ${service}\n` +
                    `• *Preferred Vehicle:* ${vehicle}\n` +
                    `• *Travel Date:* ${date}\n` +
                    `• *Passengers:* ${pax}\n` +
-                   `• *Notes/Pickup:* ${notes}`;
+                   `• *Pickup / Requests:* ${notes}`;
         }
 
         document.getElementById('contactInquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const msg = buildCustomMessage();
-            const previewBox = document.getElementById('previewBox');
-            document.getElementById('generatedMessageText').textContent = msg;
-            previewBox.classList.remove('hidden');
-
             showToast('Opening WhatsApp with your trip details...');
             window.open(`https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         });
@@ -1860,11 +1687,12 @@
     <!-- Floating Call & WhatsApp buttons -->
     <div class="fixed bottom-5 left-4 z-40 flex flex-col gap-3">
         <a href="https://wa.me/919023556476?text=Hello%20Bhavnath%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20cab" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-[#25D366] hover:brightness-95 text-white shadow-xl flex items-center justify-center transition active:scale-95" aria-label="WhatsApp us">
-            <i data-lucide="message-circle" class="w-7 h-7"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
         </a>
         <a href="tel:+919023556476" class="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-xl flex items-center justify-center transition active:scale-95" aria-label="Call 90235 56476">
-            <i data-lucide="phone-call" class="w-7 h-7"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </a>
     </div>
+    <script>if (window.lucide) { lucide.createIcons(); }</script>
 </body>
 </html>
